@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 15:00:20 by kbolon            #+#    #+#             */
-/*   Updated: 2024/08/16 10:03:37 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/01 09:29:13 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,20 +77,15 @@ void	printContact(phoneBook phoneBook, int i)
 	std::cout << "INDEX:         ";
 	indexString = integerToString(phoneBook.people[i].index);
 	printString(indexString);
-	std::cout << "\n";
-	std::cout << "FIRST NAME:    ";
+	std::cout << "\nFIRST NAME:    ";
 	printString(phoneBook.people[i].getFirstName());
-	std::cout << "\n";
-	std::cout << "LAST NAME:     ";
+	std::cout << "\nLAST NAME:     ";
 	printString(phoneBook.people[i].getLastName());
-	std::cout << "\n";
-	std::cout << "NICKNAME:      ";
+	std::cout << "\nNICKNAME:      ";
 	printString(phoneBook.people[i].getNickName());
-	std::cout << "\n";
-	std::cout << "PHONENUMBER:   ";
+	std::cout << "\nPHONENUMBER:   ";
 	printString(phoneBook.people[i].getPhoneNumber());
-	std::cout << "\n";
-	std::cout << "DARKEST SECRET:";
+	std::cout << "\nDARKEST SECRET:";
 	printString(phoneBook.people[i].getDarkestSecret());
 	std::cout << "\n\n";
 }
@@ -104,25 +99,6 @@ std::string	makeUpper(std::string input)
 	{
 		if (input[i] >= 'a' && input[i] <= 'z')
 			input[i] -= 32;
-		i++;
-	}
-	return (input);
-}
-
-std::string	checkForDigits(std::string input)
-{
-	int	i = 0;
-
-	while (input[i])
-	{
-		if (input[i] <= '0' && input[i] >= '9')
-		{
-			std::cout << "ENTER DIGITS ONLY\n";
-			std::cout << "ENTER PHONENUMBER:\n";
-			std::string	str;
-			std::cin >> str;
-			checkForDigits(str);
-		}
 		i++;
 	}
 	return (input);
@@ -190,6 +166,7 @@ int	main()
 			{
 				i = 0;
 				addContacts(phoneBook, i);
+				i++;
 			}
 		}
 		else if (input == "SEARCH" || input == "2")
