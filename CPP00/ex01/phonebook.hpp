@@ -18,7 +18,7 @@
 #include <iomanip>
 #include <sstream>
 
-class	contact{
+class	Contact{
 private:
 	std::string	firstName;
 	std::string	lastName;
@@ -49,7 +49,7 @@ public:
 class phoneBook
 {
 	public:
-		contact people[8];
+		Contact people[8];
 };
 
 void		printString(std::string str);
