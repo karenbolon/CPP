@@ -6,13 +6,13 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:15:00 by kbolon            #+#    #+#              #
-#    Updated: 2024/11/01 17:01:16 by kbolon           ###   ########.fr        #
+#    Updated: 2024/11/02 09:31:15 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie_horde
+NAME = brain
 
-SRCS = Zombie.cpp zombieHorde.cpp main.cpp
+SRCS = main.cpp
 
 CC = c++
 OBJS = $(SRCS:.cpp=.o)
