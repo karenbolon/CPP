@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:09:37 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/03 16:39:29 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/03 16:42:17 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int main(int ac, char **av)
 		infile.open((av[1]));
 		if (!infile)
 		{
-			std::cerr << "ERROR: Could not open infile" <<std::endl;
+			std::cout << "ERROR: Could not open infile" <<std::endl;
 			return (1);
 		}
 		outfile.open((std::string(av[1]) + ".replace"));
 		if (!outfile)
 		{
-			std::cerr << "ERROR: Could not open outfile" <<std::endl;
+			std::cout << "ERROR: Could not open outfile" <<std::endl;
 			return (1);
 		}
 		while (getline(infile, line))
