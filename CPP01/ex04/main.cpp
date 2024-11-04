@@ -6,16 +6,17 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:09:37 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/03 16:42:17 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/04 14:28:36 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Losers.hpp"
+#include "SedIsForLosers.hpp"
 
 //do not neet to close infile/outfile as it automatically happens when
 //they go out of scope
 //npos is used to check whether find() was successful.  If find() returns
 //something, it means s1 was found and if it returns npos then s1 was NOT found
+//c_str() converts the string to a const char * which is needed for open()
 int main(int ac, char **av)
 {
 	if (ac == 4)
@@ -32,7 +33,7 @@ int main(int ac, char **av)
 			std::cout << "ERROR: Could not open infile" <<std::endl;
 			return (1);
 		}
-		outfile.open((std::string(av[1]) + ".replace"));
+		outfile.open((std::string(av[1]) + ".replace").c_str());
 		if (!outfile)
 		{
 			std::cout << "ERROR: Could not open outfile" <<std::endl;

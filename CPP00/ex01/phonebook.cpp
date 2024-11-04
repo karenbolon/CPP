@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 15:00:20 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/01 09:29:13 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/04 13:14:23 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,34 +104,40 @@ std::string	makeUpper(std::string input)
 	return (input);
 }
 
+//std::cin takes input from keyboard and stores the first word in 
+//my input variable but if there is more than one word entered 
+//only the first word is stored in input and the rest is left
+//in a buffer.  I used cin.ignore to ignore the remainder of what
+//was entered.
 void	addContacts(phoneBook &phoneBook, int i)
 {
 	std::string	input;
 
+	std::cin.ignore(1000, '\n');
 	system("clear");
 	phoneBook.people[i].index = i + 1;
 	std::cout << "ENTER FIRST NAME:\n";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	phoneBook.people[i].setFirstName(makeUpper(input));
 	system("clear");
 
 	std::cout << "ENTER LAST NAME:\n";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	phoneBook.people[i].setLastName(makeUpper(input));
 	system("clear");
 
 	std::cout << "ENTER NICKNAME:\n";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	phoneBook.people[i].setNickName(makeUpper(input));
 	system("clear");
 
 	std::cout << "ENTER PHONENUMBER:\n";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	phoneBook.people[i].setPhoneNumber(makeUpper(input));
 	system("clear");
 
 	std::cout << "ENTER DARKEST SECRET:\n";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	phoneBook.people[i].setDarkestSecret(makeUpper(input));
 	system("clear");
 }

@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:09:52 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/03 18:01:59 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/04 14:15:01 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iostream>
 #include <string>
-#include <array>
 
 class Harl
 {

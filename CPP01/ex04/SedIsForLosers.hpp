@@ -6,12 +6,12 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:09:52 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/02 17:16:18 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/04 14:22:16 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LOSERS_HPP
-#define LOSERS_HPP
+#ifndef SED_IS_FOR_LOSERS_HPP
+#define SED_IS_FOR_LOSERS_HPP
 
 #include <iostream>
 #include <string>

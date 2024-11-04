@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 14:59:58 by kbolon            #+#    #+#             */
-/*   Updated: 2024/08/15 18:12:31 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/04 12:00:33 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <iomanip>
 #include <sstream>
+#include <cstdlib>
 
 class	Contact{
 private:
@@ -29,7 +30,7 @@ private:
 public:
 	int			index;
 
-	contact() : index(-1) {}
+	Contact() : index(-1) {}
 
 	//setters for private attributes
 	void	setFirstName(std::string s) {firstName = s;}

@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:09:37 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/03 18:04:35 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/04 14:20:40 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Harl::~Harl()
 
 void	Harl::debug(void)
 {
-	std::cout << "[ DEBUG ]"
+	std::cout << "[ DEBUG ]" << std::endl
 		<< "I love having extra bacon for my" << std::endl
 		<< "7XL-double-cheese-triple-pickle-special-ketchup burger."
 		<< "I really do!" << std::endl << std::endl;

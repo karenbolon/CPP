@@ -6,12 +6,13 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 10:12:14 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/01 14:51:06 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/04 12:20:24 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <iomanip>
+//#include <iomanip>
+#include <ctime>
 #include "Account.hpp"
 
 //these data members are static and must be declared here to
@@ -77,9 +78,16 @@ int	Account::checkAmount(void) const
 void	Account::_displayTimestamp(void)
 {
 	time_t	current_time;
+	char	buffer[20];
 
 	current_time = time(NULL);
-	std::cout << std::put_time(localtime(&current_time), "[%Y%m%d_%H%M%S] ");
+	if (std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", 
+		std::localtime(&current_time)))
+	{
+		std::cout << buffer;
+	}
+	else
+		std::cout << "Error formatting time" << std::endl;
 }
 
 void	Account::displayAccountsInfos(void)

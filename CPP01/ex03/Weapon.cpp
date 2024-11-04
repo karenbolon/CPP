@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:10:05 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/02 16:16:05 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/04 14:30:35 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Weapon::Weapon(std::string type) 
 {
-	this->_type = type;
+	this->_weapon = type;
 }
 
 Weapon::~Weapon(void)

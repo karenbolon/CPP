@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:09:37 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/03 18:03:01 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/04 14:19:40 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	convertToNumber(std::string level)
 {
-	std::array<std::string, 4> list = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	std::string list[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -26,7 +26,7 @@ int	convertToNumber(std::string level)
 	return (-1);
 }
 
-void	convertNumber(std::string string)
+void	convertInput(std::string string)
 {
 	Harl	Harl1;
 	int		number = convertToNumber(string);
@@ -52,11 +52,11 @@ int main(int ac, char **av)
 {
 	if (ac == 2)
 	{
-		convertNumber(av[1]);
+		convertInput(av[1]);
 	}
 	else
 	{
-		std::cout << "please enter a number 0 - 4" << std::endl;
+		std::cout << "usage: program word (DEBUG, ERROR, INFO, WARNING, ETC)" << std::endl;
 		return (1);
 	}
 	return (0);
