@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:09:37 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/04 14:28:36 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/05 16:34:41 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,18 @@ int main(int ac, char **av)
 			}
 			outfile << line << std::endl;
 		}
+		if (infile.bad())
+		{
+			std::cout << "ERROR: Failure to read infile" << std::endl;
+			return (1);
+		}
+		infile.close();
+		outfile.close();
 	}
 	else
+	{
 		std::cout << "Usage: file S1 S2" << std::endl;
+		return (1);
+	}
 	return (0);
 }

@@ -6,13 +6,13 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:15:00 by kbolon            #+#    #+#              #
-#    Updated: 2024/11/01 17:01:16 by kbolon           ###   ########.fr        #
+#    Updated: 2024/11/05 16:10:39 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie_horde
+NAME = ZombieHorde
 
-SRCS = Zombie.cpp zombieHorde.cpp main.cpp
+SRCS = ZombieHorde.cpp Zombie.cpp main.cpp
 
 CC = c++
 OBJS = $(SRCS:.cpp=.o)

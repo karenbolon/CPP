@@ -6,11 +6,12 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 17:43:42 by kbolon            #+#    #+#             */
-/*   Updated: 2024/08/05 17:44:28 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/05 14:46:26 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
 int	main(int ac, char **av)
 {
@@ -21,18 +22,17 @@ int	main(int ac, char **av)
 		av += 1;
 		while (*av)
 		{
-			char	*str = *av;	
-			while (*str)
+			std::string	str = *av;	
+			for (size_t i = 0; i < str.size(); i++)
 			{
-				if (*str >= 'a' && *str <= 'z')
-					*str -= 32;
-				std::cout << *str;
-				str++;
+				if (str[i] >= 'a' && str[i] <= 'z')
+					str[i] -= 32;
+				std::cout << str[i];
 			}
 			av++;
 			std::cout << ' ';
 		}
-		std::cout << '\n';
+		std::cout << std::endl;
 	}
 	return (0);
 }

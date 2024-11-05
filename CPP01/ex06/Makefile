@@ -6,11 +6,11 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:15:00 by kbolon            #+#    #+#              #
-#    Updated: 2024/11/03 18:03:54 by kbolon           ###   ########.fr        #
+#    Updated: 2024/11/05 16:43:00 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
+NAME = HarlFilter
 
 SRCS = main.cpp Harl.cpp
 

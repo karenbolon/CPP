@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:09:52 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/04 14:15:01 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/05 16:41:36 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 
 class Harl
 {
+	public:
+		Harl(void);
+		~Harl();
+		void	complain(std::string level);
+	
 	private:
 		void	debug(void);
 		void	info(void);
@@ -29,11 +34,7 @@ class Harl
 			std::string level;
 			void (Harl:: *function)(void);
 		};
-		
-	public:
-		Harl(void);
-		~Harl();
-		void	complain(std::string level);
+			
 };
 
 void	convertNumber(char number);

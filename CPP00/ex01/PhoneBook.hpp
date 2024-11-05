@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 14:59:58 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/04 12:00:33 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/05 15:29:52 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,21 @@ public:
 	std::string	getDarkestSecret() {return (darkestSecret);}
 };
 
-class phoneBook
+class PhoneBook
 {
 	public:
 		Contact people[8];
 };
 
-void		printString(std::string str);
-std::string	integerToString(int n);
-void		printPhonebook(phoneBook book);
-void		printContact(phoneBook phoneBook, int i);
-std::string	makeUpper(std::string input);
 int			charToInteger(char c);
-std::string	checkForDigits(std::string input);
+void		printString(std::string str);
+void		printPhonebook(PhoneBook book);
+void		printContact(PhoneBook phoneBook, int i);
 void		displayMenu();
+void		addContacts(PhoneBook &phoneBook, int i);
+std::string	integerToString(int n);
+std::string	makeUpper(std::string input);
+std::string	checkForDigits(std::string input);
+std::string	checkEmptyString(std::string string);
 
 #endif

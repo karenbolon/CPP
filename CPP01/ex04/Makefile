@@ -6,11 +6,11 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:15:00 by kbolon            #+#    #+#              #
-#    Updated: 2024/11/02 17:24:06 by kbolon           ###   ########.fr        #
+#    Updated: 2024/11/05 16:21:28 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = losers
+NAME = SedIsForLosers
 
 SRCS = main.cpp
 

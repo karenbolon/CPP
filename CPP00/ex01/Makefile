@@ -6,13 +6,13 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:15:00 by kbolon            #+#    #+#              #
-#    Updated: 2024/08/15 15:00:58 by kbolon           ###   ########.fr        #
+#    Updated: 2024/11/05 15:45:47 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRCS = 	phonebook.cpp
+SRCS = 	PhoneBook.cpp main.cpp
 
 CC = c++
 OBJS = $(SRCS:.cpp=.o)
