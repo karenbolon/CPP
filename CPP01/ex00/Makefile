@@ -6,13 +6,13 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:15:00 by kbolon            #+#    #+#              #
-#    Updated: 2024/11/01 15:56:27 by kbolon           ###   ########.fr        #
+#    Updated: 2024/11/06 11:13:35 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = Zombie
 
-SRCS = 	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = 	main.cpp Zombie.cpp NewZombie.cpp RandomChump.cpp
 
 CC = c++
 OBJS = $(SRCS:.cpp=.o)

@@ -6,11 +6,11 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:15:00 by kbolon            #+#    #+#              #
-#    Updated: 2024/11/02 09:31:15 by kbolon           ###   ########.fr        #
+#    Updated: 2024/11/06 11:19:41 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brain
+NAME = HiThisIsBrain
 
 SRCS = main.cpp
 

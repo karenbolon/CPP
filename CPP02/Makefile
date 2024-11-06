@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/05 19:15:00 by kbolon            #+#    #+#              #
-#    Updated: 2024/11/06 11:18:34 by kbolon           ###   ########.fr        #
+#    Created: 2024/11/06 11:51:21 by kbolon            #+#    #+#              #
+#    Updated: 2024/11/06 12:00:33 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = UnnecessaryViolence
+NAME = Zombie
 
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp 
+SRCS = 	main.cpp Zombie.cpp NewZombie.cpp RandomChump.cpp
 
 CC = c++
-OBJS = $(SRCS:.cpp=.o)
+#OBJS = $(SRCS:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
