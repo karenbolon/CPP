@@ -6,45 +6,40 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:55:13 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/06 16:29:27 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/07 16:16:34 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#pragma once
 
 #include <iostream>
-#include <string>
+#include <cmath>
 
 class Fixed
 {
 private:
-	int					fixedPointNumber;
-	static const int	fractionalBits;
+	int					_fixedPoint;
+	static const int	_fractionalBits;
+
 public:
-	fixed(/* args */);
-	copyFixed(/* args */)
-	~fixed();
-	int	getFixedPointNumber();
-	void	setFixedPointNumber();
+//constructors:
+	Fixed();
+	Fixed(const int number);
+	Fixed(const float number);
+	Fixed(const Fixed& copy);
+	
+	Fixed&	operator= (const Fixed& overloadCopy); //overload assignment
+
+//getter:
+	int		getRawBits( void ) const;
+//setter:
+	void	setRawBits( int const raw );
+//public methods:
+	float	toFloat( void ) const;
+	int 	toInt( void ) const;
+	
+	~Fixed(); //destructor
 };
 
-Fixed::Fixed(/* args */)
-{
-}
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
-Fixed::~Fixed()
-{
-}
-
-Fixed::int	getFixedPointNumber(int	number)
-{
-	return (fixedPointNumbe);
-}
-
-Fixed::void	setFixedPointNumber()
-{
-	
-}
-
-int	Fixed::fractionalBits = 8; 
