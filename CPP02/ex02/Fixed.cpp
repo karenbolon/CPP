@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:49:44 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/07 16:44:08 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/08 08:15:44 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,28 +77,31 @@ int 	Fixed::toInt( void ) const
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 {
 	os << fixed.toFloat();//outputs the floating point value 
-	return (os);
+	return os;
 }
 
 
 Fixed&	Fixed::operator--()
 {
-	
+	_fixedPoint--;
+	return *this;
 }
 
 Fixed&	Fixed::operator++()
 {
-	
+	_fixedPoint++;
+	return *this;
 }
 
 Fixed	Fixed::operator--(int)
 {
-	
+
 }
 
 Fixed	Fixed::operator++(int)
 {
-	
+	_fixedPoint += int;
+	return *this;	
 }
 	
 Fixed	Fixed::operator+ (const Fixed& overloadCopy) const
