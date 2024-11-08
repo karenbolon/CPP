@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:55:13 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/07 16:40:00 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:49:17 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Fixed
 {
 private:
-	int					_fixedPoint;
+	int					_fixedPointValue;
 	static const int	_fractionalBits;
 
 public:
@@ -53,10 +53,10 @@ public:
 	float	toFloat( void ) const;
 	int 	toInt( void ) const;
 	
-	Fixed&	min( Fixed& a, Fixed& b );
-	Fixed&	max( Fixed& a, Fixed& b );
-	Fixed&	min( const Fixed& a, const Fixed& b ) const;
-	Fixed&	max( const Fixed& a, const Fixed& b ) const;
+	static Fixed&	min( Fixed& a, Fixed& b );
+	static Fixed&	max( Fixed& a, Fixed& b );
+	static const Fixed&	min( const Fixed& a, const Fixed& b );
+	static const Fixed&	max( const Fixed& a, const Fixed& b );
 
 	~Fixed(); //destructor
 };

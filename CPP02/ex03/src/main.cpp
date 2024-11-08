@@ -6,11 +6,11 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:51:57 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/08 11:54:36 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/08 16:28:31 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 
 /*
 a is initialised to 0 (float 0.0) (0 / 256 = 0)
@@ -22,18 +22,23 @@ which is approx 10.1*/
 
 int main( void )
 {
-Fixed 		a;
-Fixed const	b( Fixed( 5.05f ) * Fixed ( 2) );
+	Point points[5] = {
+		Point (5, 5),
+		Point (-1, 10),
+		Point (12, 20),
+		Point (8, 2),
+		Point (50, 50)
+	};
+	const	Point A(0, 0);
+	const	Point B(10, 0);
+	const	Point C(0, 10);
 
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-
-std::cout << b << std::endl;
-
-std::cout << Fixed::max( a, b ) << std::endl;
-
-return (0);
+	for (int i = 0; i < 5; ++i)
+	{	
+		if (bsp(A, B, C, points[i]))
+			std::cout << "Point P1 is inside the triangle." << std::endl;
+		else
+			std::cout << "Point P1 is outside the triangle." << std::endl;
+	}
+	return 0;
 }

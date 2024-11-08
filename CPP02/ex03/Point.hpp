@@ -1,45 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:55:13 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/08 10:43:30 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/08 16:08:30 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include <string>
 #include <iostream>
-#include <cmath>
+#include "Fixed.hpp"
 
-class Fixed
+class Point
 {
-private:
-	int					_fixedPointValue;
-	static const int	_fractionalBits;
+	private:
+		const Fixed	_x;
+		const Fixed _y;
+	public:
+		Point();
+		Point(const float x, const float y);
+		Point(const Point& copy);
+		~Point();
 
-public:
-//constructors:
-	Fixed();
-	Fixed(const int number);
-	Fixed(const float number);
-	Fixed(const Fixed& copy);
-	
-	Fixed&	operator= (const Fixed& overloadCopy); //overload assignment
+		const Fixed &getX() const;
+		const Fixed &getY() const;
 
-//getter:
-	int		getRawBits( void ) const;
-//setter:
-	void	setRawBits( int const raw );
-//public methods:
-	float	toFloat( void ) const;
-	int 	toInt( void ) const;
-	
-	~Fixed(); //destructor
+		Point& operator=(const Point& copy);
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
+bool bsp( Point const a, Point const b, Point const c, Point const point);
+//std::ostream& operator<<(std::ostream& os, Point const point);
 
