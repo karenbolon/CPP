@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongDog.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 11:51:57 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/11 09:52:08 by kbolon           ###   ########.fr       */
+/*   Created: 2024/11/12 15:09:16 by kbolon            #+#    #+#             */
+/*   Updated: 2024/11/12 16:34:20 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
+#include "WrongAnimal.hpp"
 
-int main( void )
-{
-Fixed a;
-Fixed b( a );
-Fixed c;
+class WrongDog : public WrongAnimal {
 
-c = b;
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
+public:
+	WrongDog();
+	WrongDog(const WrongDog& copy);
+	WrongDog &operator=( const WrongDog &src );
+	~WrongDog();
 
-return (0);
-}
+	void			makeSound() const;
+};

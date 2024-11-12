@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:55:13 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/08 10:43:30 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/11 10:24:54 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	Fixed(const float number);
 	Fixed(const Fixed& copy);
 	
-	Fixed&	operator= (const Fixed& overloadCopy); //overload assignment
+	Fixed&	operator= (const Fixed& src); //assignment operator
 
 //getter:
 	int		getRawBits( void ) const;

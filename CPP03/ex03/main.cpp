@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:26:57 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/09 18:36:50 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/11 16:28:40 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ int	main()
 	
 	DiamondTrap	Serena = DiamondTrap("Serena");
 	std::cout << std::endl;
+
+	DiamondTrap	Someone;
+	std::cout << Someone.getName() << " has energy points " << Someone.getEnergyPoints()
+		<< " and hit points " << Someone.getHitPoints() << std::endl << std::endl;
 
 	Venus.attack("Serena");
 	Serena.takeDamage(40);

@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:49:44 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/09 18:31:49 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/11 16:04:45 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoint
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
 {
+	std::cout << "Claptrap " << this->_name << " copy constructor called" << std::endl;
 	_name = copy._name;
 	_hitPoints = copy._hitPoints;
 	_energyPoints = copy._energyPoints;
@@ -29,7 +30,7 @@ ClapTrap::ClapTrap(const ClapTrap& copy)
 }
 
 ClapTrap& ClapTrap::operator=( const ClapTrap &src ){
-
+	std::cout << "Claptrap " << this->_name << " assignment operator called" << std::endl;
 	if (this != &src)
 	{
 		_name = src._name;
@@ -57,7 +58,7 @@ unsigned int	ClapTrap::getAttackDamage() const{
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap " << this->_name << " default deconstructor called" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " deconstructor called" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)

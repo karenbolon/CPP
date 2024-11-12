@@ -6,18 +6,18 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/06 11:51:21 by kbolon            #+#    #+#              #
-#    Updated: 2024/11/11 16:57:42 by kbolon           ###   ########.fr        #
+#    Updated: 2024/11/12 16:38:37 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = DiamondTrap
+NAME = Animal
 
-SRCS = 	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SRCS = 	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp WrongDog.cpp
 
 CC = c++
 OBJS_DIR = obj
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
-CFLAGS = -Wall -Wextra -Werror  -Wshadow -Wno-shadow -std=c++98
+CFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
 
 all: $(NAME)
 

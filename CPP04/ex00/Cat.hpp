@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 11:51:57 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/11 09:52:08 by kbolon           ###   ########.fr       */
+/*   Created: 2024/11/06 11:55:13 by kbolon            #+#    #+#             */
+/*   Updated: 2024/11/12 16:04:38 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
 
-int main( void )
+#include "Animal.hpp"
+#include <iostream>
+
+class Cat : public Animal 
 {
-Fixed a;
-Fixed b( a );
-Fixed c;
+public:
+	Cat();
+	Cat( const Cat& copy );
+	Cat &operator=( const Cat &src );
+	~Cat();
 
-c = b;
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
+	void			makeSound() const;
+};
 
-return (0);
-}
+
+

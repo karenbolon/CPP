@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 11:51:57 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/11 09:52:08 by kbolon           ###   ########.fr       */
+/*   Created: 2024/11/12 15:09:16 by kbolon            #+#    #+#             */
+/*   Updated: 2024/11/12 16:34:25 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
 
-int main( void )
-{
-Fixed a;
-Fixed b( a );
-Fixed c;
+#pragma once
 
-c = b;
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
+#include "WrongAnimal.hpp"
 
-return (0);
-}
+class WrongCat : public WrongAnimal {
+
+public:
+	WrongCat();
+	WrongCat(const WrongCat& copy);
+	WrongCat &operator=( const WrongCat &src );
+	
+	~WrongCat();
+
+	void			makeSound() const;
+};

@@ -6,12 +6,18 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 09:18:28 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/09 18:35:40 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/11 16:18:06 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+/*ScavTrap uses ClapTrap constructor and then its own constructor.
+ScavTrap inherits all of the attributes from ClapTrap (like hitpoints, 
+energy and damage) then runs it's own constructor and initialized the 
+values to new/different amounts than the ClapTrap. If we don't assign 
+new values, it will use ClapTrap's values.
+*/
 ScavTrap::ScavTrap()  : ClapTrap(){
 	_hitPoints = 100;
 	_energyPoints = 50;
@@ -51,7 +57,7 @@ void	ScavTrap::attack( const std::string& target )
 		this->_energyPoints--;
 		std::cout << "BAM!!! " << this->_name << " attacks " << target << " causing " 
 			<< this->_attackDamage << " points of damage and making " << target
-			<< " shake and cower in fear! " << std::endl;
+			<< " shake in fear! " << std::endl;
 	}
 	else if(!_energyPoints && _hitPoints)
 		std::cout << this->_name << " does not enough energy points to attack.  Boohoo!" << std::endl;

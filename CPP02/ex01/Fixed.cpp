@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:49:44 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/08 10:43:39 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/11 10:35:38 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 const int Fixed::_fractionalBits = 8;
 
-Fixed::Fixed(): _fixedPointValue(0)
+Fixed::Fixed(): _fixedPointValue( 0 )
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int number)
+Fixed::Fixed( const int number )
 {
-	_fixedPointValue = number << _fractionalBits;
 	std::cout << "Int constructor called" << std::endl;
+	_fixedPointValue = number << _fractionalBits;
 }
 
-Fixed::Fixed(const float number)
+Fixed::Fixed( const float number )
 {
-	_fixedPointValue = roundf(number * (1 << _fractionalBits));
 	std::cout << "Float constructor called" << std::endl;
+	_fixedPointValue = roundf(number * (1 << _fractionalBits));
 }
 
-Fixed::Fixed(const Fixed& copy): _fixedPointValue(copy._fixedPointValue)
+Fixed::Fixed(const Fixed& copy): _fixedPointValue(copy.getRawBits())
 {
 	std::cout << "Copy constructor called" << std::endl;
 }
@@ -41,14 +41,12 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed&	Fixed::operator= (const Fixed& overloadCopy)
+Fixed&	Fixed::operator= ( const Fixed& src )
 {
-	//check for self-assignment, we do not want to write over original
-	if (this != &overloadCopy)
-	{
-		this->_fixedPointValue = overloadCopy._fixedPointValue;
-	}
 	std::cout <<"Copy assignment operator called" << std::endl;
+	//check for self-assignment, we do not want to write over original
+	if (this != &src)
+		this->_fixedPointValue = src.getRawBits();
 	return (*this);
 }
 

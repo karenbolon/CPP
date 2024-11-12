@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:55:13 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/07 15:50:17 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/11 15:32:57 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ ORTHODOX CANONICAL FORM: must have:
 	
 class Fixed
 {
-private:
+private://private attributes
 	int					_fixedPoint;
 	static const int	_fractionalBits;
 
 public:
 	Fixed(); //default constructor
 	Fixed(const Fixed& copy); //copy constructor
-	Fixed&	operator= (const Fixed& overloadCopy); //overload assignment
+	Fixed&	operator= (const Fixed& overloadCopy); //assignment operator overload
 	
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );

@@ -6,15 +6,15 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:03:10 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/09 18:42:33 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/12 11:27:12 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap()  : ClapTrap(), FragTrap(), ScavTrap(){
+DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap(){
 	this->_name = "no_name";
-	ClapTrap::_name = _name + "_clap";
+	ClapTrap::_name = _name + "_clap_name";
 
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
@@ -22,9 +22,9 @@ DiamondTrap::DiamondTrap()  : ClapTrap(), FragTrap(), ScavTrap(){
 	std::cout << "DiamondTrap " << this->_name << " default constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(), ScavTrap(){
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), ScavTrap(name){
 	this->_name = name;
-	ClapTrap::_name = _name + "_clap";
+	ClapTrap::_name = name + "_clap_name";
 
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
@@ -32,7 +32,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(), ScavTra
 	std::cout << "DiamondTrap " << this->_name << " constructor has been called" << std::endl;
 }
  
-DiamondTrap::DiamondTrap(const DiamondTrap& copy) : ClapTrap( copy ), FragTrap( copy ), ScavTrap( copy ){
+DiamondTrap::DiamondTrap(const DiamondTrap& copy) : ClapTrap( copy), FragTrap( copy ), ScavTrap( copy ){
 	std::cout << "DiamondTrap " << this->_name << " copy constructor called" << std::endl;
 }
 

@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 11:51:57 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/11 09:52:08 by kbolon           ###   ########.fr       */
+/*   Created: 2024/11/06 11:55:13 by kbolon            #+#    #+#             */
+/*   Updated: 2024/11/12 16:33:38 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
 
-int main( void )
-{
-Fixed a;
-Fixed b( a );
-Fixed c;
+#include <string>
+#include <iostream>
 
-c = b;
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
+class Animal {
+protected:
+	std::string		_type;
 
-return (0);
-}
+public:
+	Animal();
+	Animal(const Animal& copy);
+	Animal &operator=( const Animal &src );
+	virtual ~Animal();
+
+	std::string		getType() const;
+	virtual void	makeSound() const;
+};
+
+
+

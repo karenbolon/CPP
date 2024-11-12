@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 09:18:28 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/09 18:44:02 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/11 16:50:48 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ScavTrap::attack( const std::string& target )
 		this->_energyPoints--;
 		std::cout << "BAM!!! " << this->_name << " attacks " << target << " causing " 
 			<< this->_attackDamage << " points of damage and making " << target
-			<< " shake and cower in fear! " << std::endl;
+			<< " shake in fear! " << std::endl;
 	}
 	else if(!_energyPoints && _hitPoints)
 		std::cout << this->_name << " does not enough energy points to attack.  Boohoo!" << std::endl;
