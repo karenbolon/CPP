@@ -10,39 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog() : Animal() {
-	_type = "Dog";
-	try {
-		_brain = new Brain();
-	}
-	catch ( const std::bad_alloc& bad) {
-		throw bad;
-	}
-	std::cout << "Dog default constructor called" << std::endl;
+WrongCat::WrongCat() : WrongAnimal() {
+	_type = "WrongCat";
+	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog& copy) : Animal( copy ) {
-	std::cout << "Dog copy constructor called" << std::endl;
-	_brain = new Brain();
+WrongCat::WrongCat( const WrongCat& copy ) : WrongAnimal() {
+	std::cout << "WrongCat copy constructor called" << std::endl;
+	_type = copy._type;
 }
 
-Dog& Dog::operator=( const Dog &src ) {
-	std::cout << "Dog assignment operator called" << std::endl;
-	if (this != &src) {
-		Animal::operator=(src);
-		delete _brain;
-		_brain = new Brain(*(src._brain));
-	}
+WrongCat& WrongCat::operator=( const WrongCat &src ) {
+	std::cout << "WrongCat assignment operator called" << std::endl;
+	if (this != &src)
+		_type = src._type;
 	return (*this);
 }
 
-Dog::~Dog() {
-	std::cout << "Dog deconstructor called" << std::endl;
-	delete _brain;
+WrongCat::~WrongCat() {
+	std::cout << "WrongCat deconstructor called" << std::endl;
 }
 
-void	Dog::makeSound() const {
-	std::cout << "🐶 Arf! Arf! 🐶" << std::endl;
+void	WrongCat::makeSound() const {
+	std::cout << "😺 Meow! Meow! 😺" << std::endl;
 }

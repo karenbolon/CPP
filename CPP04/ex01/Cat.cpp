@@ -43,3 +43,7 @@ Cat::~Cat() {
 	std::cout << "Cat deconstructor called" << std::endl;
 	delete _brain;
 }
+
+void	Cat::makeSound() const {
+	std::cout << "😺 Meow! Meow! 😺" << std::endl;
+}

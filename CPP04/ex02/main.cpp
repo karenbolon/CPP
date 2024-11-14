@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:14:33 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/14 14:53:56 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/14 14:59:15 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 int main() {
 	
 size_t		rows = 5;
+//const Animal* testAnimal = new Animal();//proof that it can't be instantiated
 const Animal* array[rows]; 
 std::cout << std::endl;
 

@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 11:55:13 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/14 14:37:13 by kbolon           ###   ########.fr       */
+/*   Created: 2024/11/13 17:57:26 by kbolon            #+#    #+#             */
+/*   Updated: 2024/11/13 18:11:20 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <string>
 #include <iostream>
 
-class Cat : public Animal 
-{
+class Brain {
 private:
-	Brain* _brain;
+	std::string	_ideas[100];
+	size_t		_index;
 
 public:
-	Cat();
-	Cat( const Cat& copy );
-	Cat &operator=( const Cat &src );
-	~Cat();
+	Brain();
+	Brain( const Brain& copy );
+	Brain &operator=( const Brain &src );
+	~Brain();
 
-	void	makeSound() const;
+	std::string	getIdea( size_t index ) const;
+	void		setIdea( std::string idea );
+	
 };
-
-
-

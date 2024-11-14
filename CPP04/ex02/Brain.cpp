@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 18:00:37 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/14 14:47:37 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/14 14:55:57 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Brain& Brain::operator=( const Brain &src ) {
 }
 
 Brain::~Brain() {
-	std::cout << "Brain deconstructor called";
+	std::cout << "Brain deconstructor called" << std::endl;
 }
 
 std::string	Brain::getIdea( size_t index ) const {

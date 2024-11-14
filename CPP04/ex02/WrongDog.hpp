@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongDog.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 11:55:13 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/14 14:37:13 by kbolon           ###   ########.fr       */
+/*   Created: 2024/11/12 15:09:16 by kbolon            #+#    #+#             */
+/*   Updated: 2024/11/12 16:34:20 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include "WrongAnimal.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-#include <iostream>
-
-class Cat : public Animal 
-{
-private:
-	Brain* _brain;
+class WrongDog : public WrongAnimal {
 
 public:
-	Cat();
-	Cat( const Cat& copy );
-	Cat &operator=( const Cat &src );
-	~Cat();
+	WrongDog();
+	WrongDog(const WrongDog& copy);
+	WrongDog &operator=( const WrongDog &src );
+	~WrongDog();
 
-	void	makeSound() const;
+	void			makeSound() const;
 };
-
-
-

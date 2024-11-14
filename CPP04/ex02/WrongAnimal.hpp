@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 11:55:13 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/14 14:37:13 by kbolon           ###   ########.fr       */
+/*   Created: 2024/11/12 15:09:16 by kbolon            #+#    #+#             */
+/*   Updated: 2024/11/12 16:31:44 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #pragma once
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <string>
 #include <iostream>
 
-class Cat : public Animal 
-{
-private:
-	Brain* _brain;
+class WrongAnimal{
+protected:
+	std::string		_type;
 
 public:
-	Cat();
-	Cat( const Cat& copy );
-	Cat &operator=( const Cat &src );
-	~Cat();
-
-	void	makeSound() const;
+	WrongAnimal();
+	WrongAnimal(std::string type);
+	WrongAnimal(const WrongAnimal& copy);
+	WrongAnimal &operator=( const WrongAnimal &src );
+	
+	~WrongAnimal();
+	
+	std::string		getType() const;
+	void			makeSound() const;
 };
-
-
-

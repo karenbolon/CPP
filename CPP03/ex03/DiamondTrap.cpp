@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:03:10 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/12 11:27:12 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/14 11:09:14 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,15 @@ DiamondTrap& DiamondTrap::operator=( const DiamondTrap &src ){
 	return (*this);
 }
 
-DiamondTrap::~DiamondTrap(){
+DiamondTrap::~DiamondTrap() {
 	std::cout << "DiamondTrap " << this->_name << " deconstructor has been called" << std::endl;
 }
 
-void	DiamondTrap::whoAmI(){
+//explicitly call/use ScavTrap attack member function
+void	DiamondTrap::attack( const std::string& target ) {
+	ScavTrap::attack( target );
+}
+
+void	DiamondTrap::whoAmI() {
 	std::cout << "I have 2 names: " << this->_name << " and " << ClapTrap::_name << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:03:30 by kbolon            #+#    #+#             */
-/*   Updated: 2024/11/09 18:26:20 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/11/14 11:07:06 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,10 @@ class DiamondTrap : public FragTrap, public ScavTrap{
 		DiamondTrap();
 		DiamondTrap( std::string Name );
 		DiamondTrap( const DiamondTrap& copy );
-
 		~DiamondTrap();
 
 		DiamondTrap &operator=( const DiamondTrap &src );
 
-		using	ScavTrap::attack;
+		void	attack( const std::string& target );
 		void	whoAmI();
 };

@@ -6,13 +6,15 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/06 11:51:21 by kbolon            #+#    #+#              #
-#    Updated: 2024/11/14 12:39:57 by kbolon           ###   ########.fr        #
+#    Updated: 2024/11/13 18:31:48 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
+NAME = Brain
 
-SRCS = 	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp WrongDog.cpp
+SRCS = 	main.cpp Animal.cpp Dog.cpp Cat.cpp \
+	WrongAnimal.cpp WrongCat.cpp WrongDog.cpp \
+	Brain.cpp
 
 CC = c++
 OBJS_DIR = obj

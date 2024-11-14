@@ -10,39 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 
-Dog::Dog() : Animal() {
-	_type = "Dog";
-	try {
-		_brain = new Brain();
-	}
-	catch ( const std::bad_alloc& bad) {
-		throw bad;
-	}
-	std::cout << "Dog default constructor called" << std::endl;
+Animal::Animal() : _type( "Animal" ) {
+	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog& copy) : Animal( copy ) {
-	std::cout << "Dog copy constructor called" << std::endl;
-	_brain = new Brain();
+Animal::Animal( const Animal& copy ) {
+	std::cout << "Animal copy constructor called" << std::endl;
+	_type = copy._type;
 }
 
-Dog& Dog::operator=( const Dog &src ) {
-	std::cout << "Dog assignment operator called" << std::endl;
-	if (this != &src) {
-		Animal::operator=(src);
-		delete _brain;
-		_brain = new Brain(*(src._brain));
-	}
+Animal& Animal::operator=( const Animal &src ) {
+	std::cout << "Animal assignment operator called" << std::endl;
+	if (this != &src)
+		_type = src._type;
 	return (*this);
 }
 
-Dog::~Dog() {
-	std::cout << "Dog deconstructor called" << std::endl;
-	delete _brain;
+std::string		Animal::getType() const{
+	return (this->_type);
 }
 
-void	Dog::makeSound() const {
-	std::cout << "🐶 Arf! Arf! 🐶" << std::endl;
+Animal::~Animal(){
+	std::cout << "Animal deconstructor called" << std::endl;
+}
+
+void	Animal::makeSound() const{
+	std::cout << "Animal sound...grr!!" << std::endl;
 }
