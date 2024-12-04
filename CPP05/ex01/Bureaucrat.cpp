@@ -6,11 +6,12 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:05:47 by kbolon            #+#    #+#             */
-/*   Updated: 2024/12/04 13:34:00 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/12/04 16:53:33 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
 	return("Error: Grade Too High");
@@ -75,6 +76,16 @@ void	Bureaucrat::decrementGrade() {
 		std::cout << "New grade afer demotion: " << _grade << std::endl;
 	}
 	else {
+		throw (GradeTooLowException());
+	}
+}
+
+void	Bureaucrat::signForm(Form& form) {
+	if (_grade <= form.getGradeToSign()) {
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	}
+	else {
+		std::cout << _name << " couldn't sign " << form.getName() << " because ";
 		throw (GradeTooLowException());
 	}
 }

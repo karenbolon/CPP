@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:55:13 by kbolon            #+#    #+#             */
-/*   Updated: 2024/12/04 13:05:46 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/12/04 16:52:30 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 #include <iostream>
 #include <exception>
 
+class Form;
+
 class Bureaucrat {
-private:
+protected:
 	const std::string	_name;
 	int					_grade;
 
@@ -47,6 +49,8 @@ public:
 	public:
 		const char* what() const throw();
 	};
+
+	void				signForm( Form& form );
 
 };
 
