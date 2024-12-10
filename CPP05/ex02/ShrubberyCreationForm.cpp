@@ -6,16 +6,17 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:52:09 by kbolon            #+#    #+#             */
-/*   Updated: 2024/12/09 16:54:14 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/12/10 14:29:37 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
+#include <string>
 
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) :
-	AForm( "shrubberyCreationForm", 145, 137, target) {}
+	AForm( "ShrubberyCreationForm", 145, 137, target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm& src ) :
 	AForm( src ) {
@@ -35,9 +36,13 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
 void	ShrubberyCreationForm::execute(const Bureaucrat& executor ) const {
-	if (isExecutable(executor)) {
-		std::ofstream	myfile(getTarget() + "_shrubbery");
+	if (isExecutable(executor) == true) {
+		std::cout << "Form is signed and executable" << std::endl;
+		std::string	fileName = getTarget() + "_shrubbery";
+		std::cout << "Attempting to create file ";
+		std::ofstream	myfile(fileName.c_str());
 		if (!myfile.is_open()) {
+			std::cout << "Failed to open file ";
 			throw std::ios_base::failure("Failed to create shrubbery file");
 		}
 		myfile << "          &&& &&  & &&" << std::endl 

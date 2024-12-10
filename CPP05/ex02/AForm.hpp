@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:52:03 by kbolon            #+#    #+#             */
-/*   Updated: 2024/12/09 16:58:49 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/12/10 14:38:56 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 class	AForm {
 private:
 	const std::string	_name;
+	const std::string	_target;
 	bool				_signed;
 	const int			_signing_grade;
 	const int			_execution_grade;
-	const std::string	_target;
 
 public:
 	AForm(const std::string& name, int signing_grade, int execution_grade, std::string target);
@@ -39,7 +39,7 @@ public:
 	void				beSigned( const Bureaucrat& Bureaucrat );
 	bool				isExecutable( const Bureaucrat& Bureaucrat ) const;
 
-	virtual void		Execute( Bureaucrat const & executor ) const = 0;
+	virtual void		execute( Bureaucrat const & executor ) const = 0;
 
 	//Exception Classes
 	class	GradeTooHighException : public std::exception {
@@ -48,6 +48,11 @@ public:
 	};
 
 	class	GradeTooLowException : public std::exception {
+	public:
+		const char* what() const throw();
+	};
+
+	class	FormNotSignedException : public std::exception {
 	public:
 		const char* what() const throw();
 	};

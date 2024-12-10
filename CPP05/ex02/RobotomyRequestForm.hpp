@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:52:03 by kbolon            #+#    #+#             */
-/*   Updated: 2024/12/09 14:40:51 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/12/10 12:02:44 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 class	RobotomyRequestForm : public AForm {
 private:
-	
-	static int	_counter;
+	const std::string _target;
 
 public:
 	RobotomyRequestForm(const std::string& target);

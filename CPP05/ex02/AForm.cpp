@@ -6,7 +6,7 @@
 /*   By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:52:09 by kbolon            #+#    #+#             */
-/*   Updated: 2024/12/09 17:08:36 by kbolon           ###   ########.fr       */
+/*   Updated: 2024/12/10 14:38:51 by kbolon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@ const char* AForm::GradeTooLowException::what() const throw() {
 	return("Error: Grade Too Low");
 };
 
+const char*	AForm::FormNotSignedException::what() const throw() {
+	return ("Error: Form Not Signed");
+};
+
 AForm::AForm(const std::string& name, const int signing_grade, const int execution_grade, const std::string target) : 
-	_name( name ), _signed( false ), _signing_grade ( signing_grade ), _execution_grade( execution_grade ), _target( target) {
+	_name( name ), _target( target ), _signed( false ), _signing_grade ( signing_grade ), _execution_grade( execution_grade ) {
 	std::cout << "Constructor called: AForm " << _name << " created with signing grade: " << _signing_grade \
 	<< " and execution grade " << _execution_grade << std::endl;
 	if (signing_grade < 1 || execution_grade < 1) {
@@ -33,8 +37,8 @@ AForm::AForm(const std::string& name, const int signing_grade, const int executi
 	}
 }
 
-AForm::AForm( const AForm& src ) : _name(src._name), _signed(src._signed), _signing_grade(src._signing_grade), \
-	_execution_grade(src._execution_grade), _target(src._target) {
+AForm::AForm( const AForm& src ) : _name(src._name), _target(src._target), _signed(src._signed), _signing_grade(src._signing_grade), \
+	_execution_grade(src._execution_grade) {
 	std::cout << "AForm copy constructor called" << std::endl;
 }
 
@@ -51,6 +55,10 @@ const std::string	AForm::getName() const {
 	return (_name);
 }
 
+const std::string	AForm::getTarget() const {
+	return (_target);
+}
+
 bool	AForm::getSigned() const {
 	return (_signed);
 }
@@ -63,14 +71,15 @@ int		AForm::getGradeToExecute() const {
 	return (_execution_grade);
 }
 
-bool	AForm::isExecutable( const Bureaucrat& Bureaucrat ) const {
+bool	AForm::isExecutable( const Bureaucrat& bureaucrat ) const {
 	if (!_signed) {
-//		throw (FormNotSignedException());
+		std::cerr << "Error: Form " << _name << " is not signed!" << std::endl;
+		throw (FormNotSignedException());
+	}
+	if ( bureaucrat.getGrade() >= getGradeToExecute() ) {
 		throw ( GradeTooLowException() );
 	}
-	if ( bureaucrat.getGrade() >= getGradeToExecuteGrade() ) {
-		throw ( GradeTooLowException() );
-	}
+	std::cout << "Form " << _name << " is executable by " << bureaucrat.getName() << "." << std::endl;
 	return (true);
 }
 
@@ -85,7 +94,7 @@ void	AForm::beSigned( const Bureaucrat& bureaucrat ) {
 }
 
 AForm::~AForm() {
-	std::cout << "Form deconstructor called" << std::endl;
+	std::cout << "Form destructor called" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream&os, const AForm& src) {
