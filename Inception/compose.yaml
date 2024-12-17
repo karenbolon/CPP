@@ -1,0 +1,20 @@
+#specifies the Docker Compose file format version
+version: '3.8'
+services:
+  nginx:
+    build:
+    #path to Dockerfile
+      context: ./srcs/requirements/nginx
+    ports:
+    #map host port 8080 to container port 80
+      - "8080:80" 
+    #for TLS setup
+#      - "443:443"
+    volumes:
+    #map my website files
+      - ./html5up-story/:/usr/share/nginx/html
+    container_name: my_nginx
+    restart: always
+
+  db:
+    
