@@ -6,14 +6,14 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/06 11:51:21 by kbolon            #+#    #+#              #
-#    Updated: 2024/12/09 11:59:46 by kbolon           ###   ########.fr        #
+#    Updated: 2024/12/18 17:09:51 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = Intern
 
 SRCS = 	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp \
-	RobotomyRequestForm.cpp
+	RobotomyRequestForm.cpp Intern.cpp
 
 CC = c++
 OBJS_DIR = obj
