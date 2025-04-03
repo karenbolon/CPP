@@ -5,29 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/05 19:15:00 by kbolon            #+#    #+#              #
-#    Updated: 2025/03/25 11:06:59 by kbolon           ###   ########.fr        #
+#    Created: 2024/11/06 11:51:21 by kbolon            #+#    #+#              #
+#    Updated: 2025/04/03 13:19:53 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = account
+NAME = ScalarConverter
 
-SRCS = 	Account.cpp tests.cpp
+SRCS = 	main.cpp ScalarConverter.cpp
 
 CC = c++
-OBJS = $(SRCS:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+OBJS_DIR = obj
+OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
+CFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp
+$(OBJS_DIR)/%.o: %.cpp | $(OBJS_DIR)
 	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
 
+$(OBJS_DIR):
+	mkdir -p $(OBJS_DIR)
+
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
 	rm -f $(NAME)

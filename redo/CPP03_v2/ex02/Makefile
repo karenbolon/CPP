@@ -6,13 +6,13 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:15:00 by kbolon            #+#    #+#              #
-#    Updated: 2025/03/25 11:06:59 by kbolon           ###   ########.fr        #
+#    Updated: 2025/03/31 14:12:18 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = account
+NAME = FragTrap
 
-SRCS = 	Account.cpp tests.cpp
+SRCS = 	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 CC = c++
 OBJS = $(SRCS:.cpp=.o)

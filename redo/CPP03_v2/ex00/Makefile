@@ -6,13 +6,13 @@
 #    By: kbolon <kbolon@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:15:00 by kbolon            #+#    #+#              #
-#    Updated: 2025/03/25 11:06:59 by kbolon           ###   ########.fr        #
+#    Updated: 2025/03/28 15:34:42 by kbolon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = account
+NAME = ClapTrap
 
-SRCS = 	Account.cpp tests.cpp
+SRCS = 	main.cpp ClapTrap.cpp
 
 CC = c++
 OBJS = $(SRCS:.cpp=.o)
